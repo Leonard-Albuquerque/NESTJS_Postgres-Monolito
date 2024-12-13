@@ -10,9 +10,10 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": true,   // ADICIONE ESTA LINHA
-    "emitDecoratorMetadata": true     // ADICIONE ESTA LINHA
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "types": ["node", "jsonwebtoken"] 
   },
-  "include": ["src/**/*"], 
-  "exclude": ["node_modules", "dist"]  
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
