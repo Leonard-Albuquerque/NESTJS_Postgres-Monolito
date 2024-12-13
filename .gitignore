@@ -11,6 +11,3 @@ coverage/
 
 # Desconsiderar dependências
 node_modules/
-
-# Desconsiderar diretório de distribuição
-dist/
