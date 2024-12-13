@@ -1,7 +1,7 @@
 
 # NestJS PostgreSQL Monolito
 
-Este é um exemplo de aplicação **monolítica** utilizando **NestJS** com **PostgreSQL** como banco de dados. A aplicação implementa operações básicas de CRUD para a entidade `User`, como criar, listar e buscar usuários, além de incluir a verificação para evitar a duplicação de e-mails.
+Este é um exemplo de aplicação **monolítica** utilizando **NestJS** com **PostgreSQL** como banco de dados. A aplicação implementa operações básicas de CRUD para a entidade `User`, como criar, listar e buscar usuários.
 
 ## Tecnologias Utilizadas
 
@@ -33,13 +33,6 @@ Esta aplicação oferece os seguintes endpoints:
     "name": "João Silva",
     "email": "joao.silva@example.com",
     "password": "senha123"
-  }
-  ```
-- **Erro** (Caso o e-mail já esteja em uso):
-  ```json
-  {
-    "statusCode": 400,
-    "message": "Email already in use."
   }
   ```
 
