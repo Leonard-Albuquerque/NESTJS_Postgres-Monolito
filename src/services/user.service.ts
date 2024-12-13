@@ -7,7 +7,7 @@ import { User } from '../entities/user.entity';
 export class UserService {
   constructor(
     @InjectRepository(User)
-    private userRepository: Repository<User>, // Repositório injetado corretamente
+    private userRepository: Repository<User>,
   ) {}
 
   async createUser(name: string, email: string, password: string): Promise<User> {
