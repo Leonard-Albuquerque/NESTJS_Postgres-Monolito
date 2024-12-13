@@ -1,0 +1,16 @@
+# Desconsiderar arquivos do sistema operacional
+.DS_Store
+
+# Desconsiderar arquivos de configuração de IDEs
+.idea/
+.vscode/
+
+# Desconsiderar arquivos gerados
+build/
+coverage/
+
+# Desconsiderar dependências
+node_modules/
+
+# Desconsiderar diretório de distribuição
+dist/
