@@ -22,6 +22,10 @@ let UserService = class UserService {
         this.userRepository = userRepository;
     }
     async createUser(name, email, password) {
+        const existingUser = await this.userRepository.findOne({ where: { email } });
+        if (existingUser) {
+            throw new Error('Este e-mail já está em uso');
+        }
         const user = this.userRepository.create({ name, email, password });
         return this.userRepository.save(user);
     }

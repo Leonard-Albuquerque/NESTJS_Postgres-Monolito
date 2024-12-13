@@ -19,8 +19,16 @@ let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
     }
-    createUser(body) {
-        return this.userService.createUser(body.name, body.email, body.password);
+    async createUser(body) {
+        try {
+            return await this.userService.createUser(body.name, body.email, body.password);
+        }
+        catch (error) {
+            if (error instanceof Error && error.message === 'Este e-mail já está em uso') {
+                throw new common_1.HttpException({ statusCode: common_1.HttpStatus.BAD_REQUEST, message: error.message }, common_1.HttpStatus.BAD_REQUEST);
+            }
+            throw new common_1.HttpException({ statusCode: common_1.HttpStatus.INTERNAL_SERVER_ERROR, message: 'Erro interno do servidor' }, common_1.HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
     getAllUsers() {
         return this.userService.findAll();
@@ -35,7 +43,7 @@ __decorate([
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], UserController.prototype, "createUser", null);
 __decorate([
     (0, common_1.Get)(),
